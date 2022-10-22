@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1 {
+    text-decoration: underline;
+}
+
+body {
+    background-color: #eee;
+    text-align: center;
+}
+
+.body {
+    width: 90%;
+    margin: 5em auto;
+}
+
+.response {
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.856);
+    padding: 3em;
+    line-height: 2em;
+    width: 70%;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 1.2em;
+    color: white;
+}
+
+#find {
+    margin-top: .8em;
+}

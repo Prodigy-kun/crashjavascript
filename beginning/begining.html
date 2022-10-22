@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping list example</title>
+  <style>
+    li {
+      margin-bottom: 10px;
+    }
+
+    li button {
+      font-size: 8px;
+      margin-left: 20px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>My shopping list</h1>
+
+  <div>
+    <label for="item">Enter a new item:</label>
+    <input type="text" name="item" id="item">
+    <button>Add item</button>
+  </div>
+
+  <ul>
+
+  </ul>
+
+  <script>
+    // let listItem = document.createElement('li');
+    // const unOrdered = document.querySelector('ul');
+    // document.querySelector('button').addEventListener('click', function () {
+    //   const content = document.querySelector('#item').value;
+    //   document.querySelector('#item').value = ''
+    //   let listItem = document.createElement('li');
+    //   let span = document.createElement('span');
+    //   const button = document.createElement('button');
+    //   listItem.appendChild(span)
+    //   listItem.appendChild(button)
+    //   span.textContent = content
+    //   button.textContent = 'Delete'
+    //   unOrdered.appendChild(listItem)
+    //   button.addEventListener('click', function () {
+    //     listItem.remove()
+    //   })
+    //   document.querySelector('#item').focus()
+
+    // console.log(content)
+    // listItem.textContent = content;
+    // unOrdered.appendChild(listItem);
+
+    // })
+    const url = "https://pokeapi.co/api/v2/pokemon/ditto";
+    let results = null;
+    async function getPokemon(url) {
+      const response = await fetch(url);
+      //check to see if the fetch was successful
+      if (response.ok) {
+        // the API will send us JSON...but we have to convert the response before we can use it
+        // .json() also returns a promise...so we await it as well.
+        const data = await response.json();
+        doStuff(data);
+      }
+    }
+
+    function doStuff(data) {
+      results = data;
+      console.log("first: ", results);
+    }
+    getPokemon(url);
+    console.log("second: ", results);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+
+}
+
+table {
+    /* margin: 0 auto;
+    width: 60%; */
+    border-collapse: collapse;
+}
+
+thead tr {
+    background-color: rgb(137, 231, 43);
+    color: white;
+}
+
+.feint {
+    background-color: rgba(128, 255, 0, 0.404);
+}
