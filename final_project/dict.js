@@ -6,14 +6,19 @@ async function output() {
         dictList = await request.json()
         getWord(dictList)
     } else {
-        const newDiv = document.createElement('div')
-        newDiv.setAttribute('class', 'response')
-        document.body.appendChild(newDiv)
+        const newDiv2 = document.createElement('div')
+        newDiv2.setAttribute('class', 'response')
+        document.body.appendChild(newDiv2)
         const newP1 = document.createElement('p')
         newP1.textContent = 'Your input is invalid, please enter a valid word'
-        newDiv.appendChild(newP1)
-        del.setAttribute('class', 'delete')
-        del.textContent = '❌clear'
+        newDiv2.appendChild(newP1)
+        const del2 = document.createElement('button')
+        del2.setAttribute('class', 'delete2')
+        del2.textContent = '❌clear'
+        newDiv2.appendChild(del2)
+        document.querySelector('.delete2').addEventListener('click', () => {
+            document.body.removeChild(newDiv2)
+        })
     }
 }
 
